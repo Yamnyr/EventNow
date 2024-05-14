@@ -1,24 +1,21 @@
-import { Routes, Route } from 'react-router-dom';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import "bootstrap/dist/css/bootstrap.css"
 import Header from './components/Header';
 import Footer from './components/Footer';
-import Accueil from './pages/acceuil/Accueil';
+import Accueil from './pages/acceuil/Accueil'; // Assure-toi que le chemin et le nom du fichier sont corrects
 
 function App() {
   return (
-    <div>
-      <div className="my-4 pt-4 container-fluid">
-        <Header />
-      </div>
-      <div className="mt-5">
-        <Footer />
-      </div>
-      <div className="col p-0 bg-color-blue-in">
-
-      </div>
+    <Router>
       <div>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Accueil />} />
+        </Routes>
         <Footer />
       </div>
-    </div>
+    </Router>
   );
 }
 
