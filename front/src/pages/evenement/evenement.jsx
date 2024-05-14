@@ -29,6 +29,7 @@ const Evenement = () => {
             <h1 className="mb-3">Événements à venir</h1>
             <div className="row">
                 {events.map(event => (
+
                     <div key={event.id} className="col-md-4 mb-4">
                         <div className="card">
                             <div className="card-body">
