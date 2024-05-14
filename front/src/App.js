@@ -6,6 +6,8 @@ import Footer from './components/Footer';
 import Accueil from './pages/acceuil/Accueil'; // Assure-toi que le chemin et le nom du fichier sont corrects
 import Profil from './pages/profil/profil';
 import Evenement from './pages/evenement/evenement'
+import NewEvenement from './pages/admin/newEvenement'
+
 function App() {
   return (
     <Router>
@@ -15,6 +17,7 @@ function App() {
           <Route path="/" element={<Accueil />} />
           <Route path="/profil" element={<Profil />} />
           <Route path="/evenement" element={<Evenement />} />
+          <Route path="/newevenement" element={<NewEvenement />} />
         </Routes>
         <Footer />
       </div>
