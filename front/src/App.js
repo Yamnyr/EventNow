@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import "bootstrap/dist/css/bootstrap.css"
 import Header from './components/Header';
 import Footer from './components/Footer';
-import Accueil from './pages/acceuil/accueil';
+import Accueil from './pages/acceuil/Accueil';
 import Inscription from './pages/inscription/inscription';
 import Profil from './pages/profil/profil';
 import Evenement from './pages/evenement/evenement'
