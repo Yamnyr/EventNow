@@ -7,11 +7,30 @@ const Evenement = () => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
+    // useEffect(() => {
+    //     const fetchEvents = async () => {
+    //         try {
+    //             // const response = await axios.get('http://127.0.0.1:8000/api/evenements?page=1');
+    //             const response = await axios.get('http://127.0.0.1:8000/api/evenements?page=1');
+    //             setEvents(response.data['hydra:member']);
+    //             setLoading(false);
+    //         } catch (err) {
+    //             setError(err.message);
+    //             setLoading(false);
+    //         }
+    //     };
+    //
+    //     fetchEvents();
+    // }, []);
+
+
     useEffect(() => {
         const fetchEvents = async () => {
             try {
-                const response = await axios.get('http://127.0.0.1:8000/api/evenements?page=1');
-                setEvents(response.data['hydra:member']);
+                // const response = await axios.get('http://127.0.0.1:8000/api/evenements?page=1');
+                const response = await axios.get('http://127.0.0.1:8000/evenements/getall');
+                // console.log(response.data)
+                setEvents(response.data);
                 setLoading(false);
             } catch (err) {
                 setError(err.message);
@@ -22,12 +41,15 @@ const Evenement = () => {
         fetchEvents();
     }, []);
 
-    if (loading) return <div>Loading...</div>;
-    if (error) return <div>Error: {error}</div>;
+
+
+    // if (loading) return <div>Loading...</div>;
+    // if (error) return <div>Error: {error}</div>;
 
     return (
         <div className="container mt-5">
             <h1 className="mb-3">Événements à venir</h1>
+
             <div className="row">
                 {events.map(event => (
                     <EvenementCard key={event.id} data={event.id} className="col-md-4 mb-4" />
