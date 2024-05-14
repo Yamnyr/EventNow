@@ -23,19 +23,8 @@ function App() {
           <Route path="/" element={<Accueil />} />
           <Route path="/profil" element={<Profil />} />
           <Route path="/evenement" element={<Evenement />} />
-<<<<<<< HEAD
-<<<<<<< HEAD
           <Route path="/inscription" element={<Inscription />} />
-=======
-<<<<<<< HEAD
           <Route path="/newevenement" element={<NewEvenement />} />
-=======
-
->>>>>>> 41d11ea202d7f80b842bf08027484c27ff98dfd9
->>>>>>> 106da9138c24f8aa3c78e13ed2a82c8fd9ab9848
-=======
-          <Route path="/newevenement" element={<NewEvenement />} />
->>>>>>> 592edb6232739e32d8db77d35f7430072c04799d
         </Routes>
         <Footer />
       </div>
