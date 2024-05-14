@@ -10,7 +10,7 @@ const Evenement = () => {
         const fetchEvents = async () => {
             try {
                 const response = await axios.get('http://127.0.0.1:8001/api/evenements?page=1');
-                setEvents(response.data['hydra:member']); // Assure-toi que c'est le bon chemin pour accéder aux événements
+                setEvents(response.data['hydra:member']);
                 setLoading(false);
             } catch (err) {
                 setError(err.message);
@@ -29,13 +29,14 @@ const Evenement = () => {
             <h1 className="mb-3">Événements à venir</h1>
             <div className="row">
                 {events.map(event => (
-
                     <div key={event.id} className="col-md-4 mb-4">
                         <div className="card">
                             <div className="card-body">
                                 <h5 className="card-title">{event.title}</h5>
                                 <p className="card-text">{event.description}</p>
-                                <p className="card-text"><small>Date: {new Date(event.date).toLocaleDateString()}</small></p>
+                                <p className="card-text">
+                                    <small>Date: {formatDate(event.date)}</small>
+                                </p>
                                 <a href="#" className="btn btn-primary">En savoir plus</a>
                             </div>
                         </div>
@@ -45,5 +46,10 @@ const Evenement = () => {
         </div>
     );
 };
+
+function formatDate(dateString) {
+    const options = { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' };
+    return new Date(dateString).toLocaleDateString('fr-FR', options);
+}
 
 export default Evenement;
