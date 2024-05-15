@@ -33,6 +33,7 @@ export default function EvenementCard({ data }) {
                         <h5 className="card-title">{event.nom}</h5>
                         <p className="card-text">{event.description}</p>
                         {event.annule ? <p>{event.raison_annulation}</p>: <p></p>}
+                        {event.annule ? <p>{event.raison_annulation}</p>: <p></p>}
                         <p className="card-text">
                             {event.dates.map(date => (
                                 <div key={date.id}>{date.date}</div>
